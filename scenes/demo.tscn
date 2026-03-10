@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://b13xvdu62nr7n"]
+
+[ext_resource type="PackedScene" uid="uid://d1a7ckc4qo2cf" path="res://addons/dust-3d/Dust3D.tscn" id="1_tqfh0"]
+
+[sub_resource type="Environment" id="Environment_tqfh0"]
+background_mode = 1
+tonemap_mode = 3
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0018
+volumetric_fog_albedo = Color(0.78352344, 0.7835234, 0.7835234, 1)
+
+[node name="Demo" type="Node3D" unique_id=474828831]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=118026456]
+environment = SubResource("Environment_tqfh0")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=96228409]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1749014657]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 15)
+
+[node name="Dust3D" parent="." unique_id=434710727 instance=ExtResource("1_tqfh0")]
